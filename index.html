@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="OtherMe — explore how chance shapes identity.">
   <title>OtherMe — Me, By Chance</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
   <main class="shell">
@@ -14,10 +14,11 @@
     <p class="intro">How much of who we are began with a roll of the dice?</p>
 
     <section class="card" aria-labelledby="identity-heading">
-      <h2 id="identity-heading">Build another possible you</h2>
-      <p class="hint">Choose an option or let chance decide.</p>
+      <div class="controls-panel">
+        <h2 id="identity-heading">Build another possible you</h2>
+        <p class="hint">Choose an option or let chance decide.</p>
 
-      <div class="field">
+        <div class="field">
         <label for="sex">Sex at birth</label>
         <div class="control-row">
           <select id="sex">
@@ -28,9 +29,9 @@
           </select>
           <button class="dice" type="button" data-target="sex" aria-label="Randomize sex at birth">🎲</button>
         </div>
-      </div>
+        </div>
 
-      <div class="field">
+        <div class="field">
         <label for="country">Country of birth</label>
         <div class="control-row">
           <select id="country">
@@ -43,9 +44,9 @@
           </select>
           <button class="dice" type="button" data-target="country" aria-label="Randomize country of birth">🎲</button>
         </div>
-      </div>
+        </div>
 
-      <div class="field">
+        <div class="field">
         <label for="religion">Religion raised in</label>
         <div class="control-row">
           <select id="religion">
@@ -59,14 +60,21 @@
           </select>
           <button class="dice" type="button" data-target="religion" aria-label="Randomize religion raised in">🎲</button>
         </div>
+        </div>
+
+        <button id="randomize-all" class="primary" type="button">Roll all three</button>
       </div>
 
-      <button id="randomize-all" class="primary" type="button">Roll all three</button>
-      <p id="result" class="result" aria-live="polite">Your alternate starting point will appear here.</p>
+      <div class="outcome-panel" aria-labelledby="outcome-heading">
+        <p class="outcome-label" id="outcome-heading">Chance of this starting point</p>
+        <p class="percentage" aria-label="Percentage not calculated yet">—%</p>
+        <p id="result" class="result" aria-live="polite">Your alternate starting point will appear here.</p>
+        <p class="data-note">Real probability data comes in the next phase.</p>
+      </div>
     </section>
 
     <p class="disclaimer">Prototype only — options are placeholders, not statistical data.</p>
   </main>
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

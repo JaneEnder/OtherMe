@@ -19,7 +19,7 @@ body {
 button, select { font: inherit; }
 
 .shell {
-  width: min(100% - 32px, 680px);
+  width: min(100% - 32px, 1080px);
   margin: 0 auto;
   padding: 64px 0 40px;
 }
@@ -36,6 +36,9 @@ h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.8rem, 9vw, 5rem)
 .intro { margin: 20px 0 34px; color: #506058; font-size: 1.12rem; }
 
 .card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .9fr);
+  gap: clamp(30px, 6vw, 72px);
   padding: clamp(24px, 6vw, 40px);
   border: 1px solid #d9ded7;
   border-radius: 24px;
@@ -43,6 +46,40 @@ h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(2.8rem, 9vw, 5rem)
   box-shadow: 0 20px 60px rgba(35, 52, 41, .10);
   backdrop-filter: blur(12px);
 }
+
+.controls-panel { min-width: 0; }
+
+.outcome-panel {
+  display: flex;
+  min-height: 480px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 18px;
+  text-align: center;
+  background: linear-gradient(145deg, #244f32, #183823);
+  color: white;
+}
+
+.outcome-label {
+  margin: 0;
+  color: #c9ddcd;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.percentage {
+  margin: 24px 0 16px;
+  font-family: Georgia, serif;
+  font-size: clamp(5rem, 10vw, 8.5rem);
+  line-height: .8;
+  letter-spacing: -.07em;
+}
+
+.data-note { margin: 18px 0 0; color: #a9c2af; font-size: .78rem; }
 
 h2 { margin: 0 0 8px; font-size: 1.35rem; }
 .hint { margin: 0 0 30px; color: #6a766f; }
@@ -73,10 +110,15 @@ select { width: 100%; padding: 0 14px; color: #243329; }
 }
 
 .primary:hover { background: #1a4028; }
-.result { min-height: 48px; margin: 22px 0 0; padding: 14px 16px; border-radius: 12px; color: #3d5144; background: #f1f5ef; }
+.result { min-height: 48px; margin: 22px 0 0; padding: 14px 16px; border-radius: 12px; color: #e8f0e9; background: rgba(255,255,255,.08); }
 .disclaimer { margin: 20px 4px 0; color: #78827b; font-size: .85rem; text-align: center; }
 
 @media (max-width: 520px) {
   .shell { padding-top: 36px; }
   .card { border-radius: 18px; }
+}
+
+@media (max-width: 800px) {
+  .card { grid-template-columns: 1fr; }
+  .outcome-panel { min-height: 340px; }
 }
