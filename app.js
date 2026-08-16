@@ -6,7 +6,9 @@ function randomize(select) {
 }
 
 function updateResult() {
-  const [country, sex, religion] = selects.map((select) => select.value);
+  const country = document.querySelector("#country").value;
+  const sex = document.querySelector("#sex").value;
+  const religion = document.querySelector("#religion").value;
   const result = document.querySelector("#result");
 
   if (!country && !sex && !religion) {
